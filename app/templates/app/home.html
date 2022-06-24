@@ -49,9 +49,9 @@
  <h2>WireCart Bottom Weres</h2>
  <!-- Slider 1 -->
  <div class="owl-carousel" id="slider1">
-  
-  <a href="{% url 'product-detail' %}" class="btn"><div class="item"><img src="{% static 'app/images/product/1.jpg' %}" alt="" height="200px"><span class="fw-bold"> fff </span><br><span class="fs-5">Rs. 500</span></div></a>
-  
+  {% for b in topwears %}
+  <a href="{% url 'product-detail' %}" class="btn"><div class="item"><img src="{% static 'app/images/product/1.jpg' %}" alt="" height="200px"><span class="fw-bold"> {{b.title}} </span><br><span class="fs-5">Rs. 500</span></div></a>
+  {% endfor %}
  </div>
 </div>
 <!-- End 1st Product Slider -->
