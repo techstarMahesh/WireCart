@@ -20,7 +20,8 @@ urlpatterns = [
     path('topWear/', views.topWear, name='topWear'),
     path('bottomWear/', views.bottomWear, name='bottomWear'),
     path('login/', views.login, name='login'),
-    path('registration/', views.customerregistration, name='customerregistration'),
+    # path('registration/', views.customerregistration, name='customerregistration'),
     path('checkout/', views.checkout, name='checkout'),
+    path('registration/', views.CustomerRegistrationView.as_view(), name='customerregistration'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

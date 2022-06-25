@@ -2,6 +2,8 @@ from itertools import product
 from django.shortcuts import render
 from django.views import View
 from .models import Customer, Product, Cart, OrderPlaced
+from .form import CustomerRegistrationForm
+from django.contrib import messages
 
 # def home(request):
 #  return render(request, 'app/home.html')
@@ -73,8 +75,19 @@ def topWear(request):
 def login(request):
     return render(request, 'app/login.html')
 
-def customerregistration(request):
-    return render(request, 'app/customerregistration.html')
+# def customerregistration(request):
+#     return render(request, 'app/customerregistration.html')
+
+class CustomerRegistrationView(View):
+    def get(self, request):
+        form = CustomerRegistrationForm()
+        return render(request, 'app/customerregistration.html', {'form': form})
+    def post(self, request):
+        form = CustomerRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Registration Successfully')
+        return render(request, 'app/customerregistration.html', {'form': form})
 
 def checkout(request):
     return render(request, 'app/checkout.html')
