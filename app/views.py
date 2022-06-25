@@ -1,8 +1,7 @@
-from itertools import product
 from django.shortcuts import render
 from django.views import View
 from .models import Customer, Product, Cart, OrderPlaced
-from .form import CustomerRegistrationForm
+from .form import CustomerRegistrationForm, MyPasswordChangeForm
 from django.contrib import messages
 
 # def home(request):
@@ -38,8 +37,8 @@ def address(request):
 def orders(request):
     return render(request, 'app/orders.html')
 
-def change_password(request):
-    return render(request, 'app/changepassword.html')
+# def change_password(request):
+#     return render(request, 'app/changepassword.html')
 
 def mobile(request, data=None):
     if data == None:
