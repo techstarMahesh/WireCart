@@ -50,6 +50,26 @@ def mobile(request, data=None):
         mobiles = Product.objects.filter(category='M').filter(discounted_price__gt=10000)
     return render(request, 'app/mobile.html' , {'mobiles': mobiles})
 
+def leptop(request, data=None):
+    if data == None:
+        leptop = Product.objects.filter(category='L')
+    elif data == 'Asus' or data == 'MSI' or data == 'Lenovo' or data == 'HP':
+        leptop = Product.objects.filter(category='L').filter(brand=data)
+    elif data == 'Below':
+        leptop = Product.objects.filter(category='L').filter(discounted_price__lt=50000)
+    elif data == 'Above':
+        leptop = Product.objects.filter(category='L').filter(discounted_price__gt=50000)
+    return render(request, 'app/leptop.html' , {'leptops': leptop})
+
+def bottomWear(request, data=None):
+    if data == None:
+        bottomWear = Product.objects.filter(category='BW')
+    return render(request, 'app/bottomWear.html', {'bottomWear': bottomWear})
+
+def topWear(request):
+    topWear = Product.objects.filter(category='TW')
+    return render(request, 'app/topWear.html', {'topWear': topWear})
+
 def login(request):
     return render(request, 'app/login.html')
 
