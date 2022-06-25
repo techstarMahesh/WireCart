@@ -72,8 +72,8 @@ def topWear(request):
     topWear = Product.objects.filter(category='TW')
     return render(request, 'app/topWear.html', {'topWear': topWear})
 
-def login(request):
-    return render(request, 'app/login.html')
+# def login(request):
+#     return render(request, 'app/login.html')
 
 # def customerregistration(request):
 #     return render(request, 'app/customerregistration.html')
