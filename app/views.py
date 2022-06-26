@@ -8,8 +8,6 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
-# def home(request):
-#  return render(request, 'app/home.html')
 
 class ProductView(View):
     def get(self, request):
@@ -18,14 +16,16 @@ class ProductView(View):
         mobiles = Product.objects.filter(category='M')
         return render(request, 'app/home.html', {'topwears': topwears, 'bottomwears': bottomwears, 'mobiles': mobiles})
 
-# def product_detail(request):
-#     return render(request, 'app/productdetail.html')
 
 class ProductDetailView(View):
     def get(self, request, pk):
         product = Product.objects.get(pk=pk)
-        return render(request, 'app/productdetail.html', {'product': product})
+        iteam_cart = False
+        if request.user.is_authenticated:
+            iteam_cart = Cart.objects.filter(Q(product=product.id) & Q(user=request.user)).exists()
+        return render(request, 'app/productdetail.html', {'product': product, 'item': iteam_cart})
 
+@login_required
 def add_to_cart(request):
     user = request.user
     product_id = request.GET.get('prod_id')
@@ -33,7 +33,7 @@ def add_to_cart(request):
     Cart(user=user, product=product).save()
     return redirect('/cart')
 
-
+@login_required
 def show_cart(request):
     if request.user.is_authenticated:
         user = request.user
@@ -53,7 +53,7 @@ def show_cart(request):
         else:
             return render(request, 'app/emptycart.html')
 
-
+@login_required
 def plus_cart(request):
     if request.method == 'GET':
         prod_id = request.GET['prod_id']
@@ -73,7 +73,7 @@ def plus_cart(request):
         data = {'totalamount': total_amount, 'amount': amount, 'quantity': c.quantity}
         return JsonResponse(data)
 
-
+@login_required
 def minus_cart(request):
     if request.method == 'GET':
         prod_id = request.GET['prod_id']
@@ -91,6 +91,7 @@ def minus_cart(request):
         data = {'totalamount': total_amount, 'amount': amount, 'quantity': c.quantity}
         return JsonResponse(data)
 
+@login_required
 def remove_cart(request):
     if request.method == 'GET':
         prod_id = request.GET['prod_id']
@@ -108,18 +109,19 @@ def remove_cart(request):
         return JsonResponse(data)
 
 
-
+@login_required
 def buy_now(request):
     return render(request, 'app/buynow.html')
 
 # def profile(request):
 #     return render(request, 'app/profile.html')
 
+@login_required
 def address(request):
     add = Customer.objects.filter(user=request.user)
     return render(request, 'app/address.html',{'add':add,'active':'btn-primary'})
 
-
+@login_required
 def orders(request):
     user = request.user
     op = OrderPlaced.objects.filter(user=user)
@@ -176,7 +178,7 @@ class CustomerRegistrationView(View):
             messages.success(request, 'Registration Successfully')
         return render(request, 'app/customerregistration.html', {'form': form})
 
-
+@login_required
 def checkout(request):
     user = request.user
     add = Customer.objects.filter(user=user)
@@ -193,7 +195,7 @@ def checkout(request):
         data = {'totalamount': total_amount, 'amount': amount, 'quantity': cart_iteams, 'add': add}
     return render(request, 'app/checkout.html', data)
 
-
+@login_required
 def payment_done(request):
     user = request.user
     custid = request.GET.get('custid')
