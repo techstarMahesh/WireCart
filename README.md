@@ -1,6 +1,6 @@
-<!-- This is a simple project introduction -->
-
-# It is a E-commerce website name is **WireCart**
+# E-commerce website name is **[WireCart](https://techstarmahesh.github.io/WireCart/)**
+- Star this repo on [GitHub](https://github.com/techstarMahesh/WireCart)
+- Check out the [WireCart website](https://techstarmahesh.github.io/WireCart/)
 
 ## Language use to develop this website
 - Python Django Framework 
@@ -75,8 +75,8 @@ WireCart is a E-commerce website that is used to sell products.
 - you can perform all action that given in the above list
 
 
-[Buy cup of coffee](https://www.buycupofcoffee.com/)
+[Buy cup of coffee](https://www.buymeacoffee.com/techstarmahesh/)
 thanks for reading this
     
-    []: # Language: markdown
-    []: # Path: README.md
+    [1]: # Language: markdown
+    [2]: # Path: README.md

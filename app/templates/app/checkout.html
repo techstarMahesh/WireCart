@@ -22,6 +22,11 @@
   <div class="col-sm-4 offset-sm-1">
     <h4>Select Shipping Address</h4>
     <hr>
+    
+    {% if add == None %}
+    <h3>Plese add atlist one address</h3>
+    <p>For adding address plese <a href=" {% url 'address' %}" class="text-decoration-none" >click</a> here </p>
+    {% else %}
     <form action="/paymentdone">
       {% for ad in add %}
       <div class="card">
@@ -31,7 +36,7 @@
         </div>
       </div>
         <div class="form-check mt-2 mb-5">
-          <input class="form-check-input" type="radio" name="custid" id="custadd{{forloop.counter}}" value=" {{ad.id}} ">
+          <input class="form-check-input" type="radio" name="custid" required id="custadd{{forloop.counter}}" value=" {{ad.id}} ">
           <label class="form-check-label fw-bold" for="">
             Address: {{forloop.counter}} </label>
         </div>
@@ -40,6 +45,7 @@
           <button type="submit" class="btn btn-warning mt-3 px-5 fw-bold">Continue</button>
         </div>
       </form>
+    {% endif %}
     </div>
   </div>
 </div>

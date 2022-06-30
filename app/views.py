@@ -182,6 +182,9 @@ class CustomerRegistrationView(View):
 def checkout(request):
     user = request.user
     add = Customer.objects.filter(user=user)
+    ## if object is not have any value then it will return false
+    if not add:
+        add=None
     cart_iteams = Cart.objects.filter(user=user)
     amount = 0.0
     shipping_charge = 40.0
@@ -198,7 +201,11 @@ def checkout(request):
 @login_required
 def payment_done(request):
     user = request.user
+    print("This is working perfectly")
+    print(user)
     custid = request.GET.get('custid')
+    print("This is your custumer id")
+    print(custid)
     customer = Customer.objects.get(id=custid)
     cart = Cart.objects.filter(user=user)
     for c in cart:
