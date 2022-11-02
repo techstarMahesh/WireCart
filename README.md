@@ -1,4 +1,4 @@
-##About
+## About
 This is an E-Commerce Application using Python(Django). In this app, we can perform admin, and user-related actions needed to run an e-commerce company. 
 
 # E-commerce website name is **[WireCart](https://techstarmahesh.github.io/WireCart/)**
