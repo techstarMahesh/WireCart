@@ -1,3 +1,6 @@
+##About
+This is an E-Commerce Application using Python(Django). In this app, we can perform admin, and user-related actions needed to run an e-commerce company. 
+
 # E-commerce website name is **[WireCart](https://techstarmahesh.github.io/WireCart/)**
 - Star this repo on [GitHub](https://github.com/techstarMahesh/WireCart)
 - Check out the [WireCart website](https://techstarmahesh.github.io/WireCart/)
