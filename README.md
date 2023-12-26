@@ -4,6 +4,8 @@ This is an E-Commerce Application using Python(Django). In this app, we can perf
 # E-commerce website name is **[WireCart](https://techstarmahesh.github.io/WireCart/)**
 - Star this repo on [GitHub](https://github.com/techstarMahesh/WireCart)
 - Check out the [WireCart website](https://techstarmahesh.github.io/WireCart/)
+- [Mahesh Final Project Report.docx](https://github.com/techstarMahesh/WireCart/files/13772927/Mahesh.Final.Project.Report.docx)
+
 
 ## Language use to develop this website
 - Python Django Framework 
