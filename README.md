@@ -1,7 +1,7 @@
-## About
+# About this project
 This is an E-Commerce Application using Python(Django). In this app, we can perform admin, and user-related actions needed to run an e-commerce company. 
 
-# E-commerce website name is **[WireCart](https://techstarmahesh.github.io/WireCart/)**
+## E-commerce website name is **[WireCart](https://techstarmahesh.github.io/WireCart/)**
 - Star this repo on [GitHub](https://github.com/techstarMahesh/WireCart)
 - Check out the [WireCart website](https://techstarmahesh.github.io/WireCart/)
 - [Mahesh Final Project Report.docx](https://github.com/techstarMahesh/WireCart/files/13772927/Mahesh.Final.Project.Report.docx)
@@ -62,26 +62,94 @@ WireCart is a E-commerce website that is used to sell products.
 - View order history
 - View order detail
 
-# How to install in your computer?
-- Download the latest version of WireCart from [GitHub](https://github.com/techstarMahesh/WireCart)
-- Extract the zip file
-- Open the folder WireCart
-- Open this folder in vs code
-- create environment name may be env
-- install dependencies form *requirements.txt*
-- run the server using python
+## How to install in your computer?
 
-        manage.py runserver
+### Create Virtual environment
 
-- open the browser and type the url *http://localhost:8000*
-- you will see the WireCart website
-- you good to go
-- so you can start to develop WireCart
-- you can perform all action that given in the above list
+### Clone project
 
+```bash
+git clone https://github.com/techstarMahesh/WireCart
+```
+
+### Go to folder
+
+```bash
+cd WireCart
+```
+### Open VS Code in that folder
+
+```bash
+code .
+```
+
+### Install VirtualEnv to create Virtual Enverment
+
+```bash
+pip install virtualenv
+```
+
+### Create Virtual enverment 
+
+```bash
+virtualenv env
+```
+
+### Activate the `env` shell first:
+
+```bash
+.\env\Scripts\activate.ps1
+```
+
+### Install requard package
+
+```bash
+pip install -r .\requirements.txt
+```
+
+### run project
+
+```bash
+python manage.py runserver
+```
+
+### Open bellow link:
+<a target="_blank" href="http://localhost:8000/">http://localhost:8000/</a>
+
+## Admin Link
+<a target="_blank" href="http://localhost:8000/admin/">http://localhost:8000/admin/</a>
+
+### Super Admin Password
+#### username and password
+```bash
+admin
+```
+
+# You good to go🙂
+
+## Here are some screenshorts
+![image](https://user-images.githubusercontent.com/46925955/196788676-68b333c7-c389-4d87-99e8-6415ee78d1ea.png)
+![image](https://user-images.githubusercontent.com/46925955/196788728-c9b4397f-de33-4259-91b1-76022a264f9e.png)
+![image](https://user-images.githubusercontent.com/46925955/196788797-4b4d6454-ec0a-46b3-9133-ffade021b017.png)
+![image](https://user-images.githubusercontent.com/46925955/196788923-301f7f95-f8ca-45c2-89c7-eac95cceccbd.png)
+
+## Login Page
+![image](https://user-images.githubusercontent.com/46925955/196789057-010a97bf-3b46-4d82-a3da-e2d8abbe88c3.png)
+
+## Registration
+![image](https://user-images.githubusercontent.com/46925955/196789159-060a16fe-91ac-41da-b0bc-c8f7be7aa305.png)
+
+## Reset Password 
+![image](https://user-images.githubusercontent.com/46925955/196789282-4b795d1a-8e45-4a0a-863c-e583d699e8a9.png)
+
+## Contact Us
+![image](https://user-images.githubusercontent.com/46925955/197399094-3784ca80-75bd-4c25-9d38-d65434be15b5.png)
+
+## Django Admin Panel
+![image](https://user-images.githubusercontent.com/46925955/196794634-400fc111-7891-45b4-a706-ac5845d6ccf8.png)
+
+
+## [Live](http://techstarmahesh.pythonanywhere.com/)
 
 [Buy cup of coffee](https://www.buymeacoffee.com/techstarmahesh/)
-thanks for reading this
-    
-    [1]: # Language: markdown
-    [2]: # Path: README.md
+thanks for reading this. 
