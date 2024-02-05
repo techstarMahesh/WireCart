@@ -27,6 +27,9 @@ Temporary Items
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
+app/__pycache__/*.*
+*.py[co]
+*/__pycache__/*.*
 *.py[cod]
 
 # C extensions
@@ -88,6 +91,5 @@ __pycache__/
 **/**.pyc
 local_settings.py
 
-.env
 db.sqlite3
 app/__pycache__/*.*
