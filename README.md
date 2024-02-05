@@ -64,8 +64,6 @@ WireCart is a E-commerce website that is used to sell products.
 
 ## How to install in your computer?
 
-### Create Virtual environment
-
 ### Clone project
 
 ```bash
@@ -123,6 +121,45 @@ python manage.py runserver
 #### username and password
 ```bash
 admin
+```
+
+## How run using docker image. 
+
+### Create Docker image
+```bash
+docker build -t wirecart .
+```
+
+### Run Docker image
+```bash
+docker run -d -p 8000:8000 wirecart
+```
+
+### Stop Docker image
+```bash
+docker stop wirecart
+```
+
+## How to run using Compose file
+
+### Just run Compose file
+```bash
+docker-compose up -d
+```
+
+### How to remove Docker image
+```bash
+docker rm wirecart
+```
+
+### How to remove all Docker image
+```bash
+docker rm $(docker ps -a -q)
+```
+
+### How to remove all Docker containers
+```bash
+docker rm $(docker ps -a -q)
 ```
 
 # You good to go🙂
